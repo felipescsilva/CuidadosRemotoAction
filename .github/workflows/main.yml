@@ -1,0 +1,43 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+on:
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build:
+   runs-on: ubuntu-latest
+   steps:
+      - name: Run a one-line script
+        run: echo Hello, world!
+        
+  deploy-dev:
+   runs-on: ubuntu-latest
+   environment:
+    name: Desenvolvimento
+    url: 'www.felipeftt1.com'
+   needs: build
+   steps:
+      - name: Run a one-line script
+        run: echo Deploy em Desenvolvimento!
+        
+  deploy-hmg:
+   runs-on: ubuntu-latest
+   environment:
+    name: Homologacao
+    url: 'www.felipeftt1.com'
+   needs: deploy-dev
+   steps:
+      - name: Run a one-line script
+        run: echo Deploy em Homologacao!
+
+  deploy-prd:
+   runs-on: ubuntu-latest
+   environment:
+    name: Prod
+    url: 'www.felipeftt2.com'
+   needs: deploy-hmg
+   steps:
+      - name: Run a one-line script
+        run: echo Deploy em Producao!!!
