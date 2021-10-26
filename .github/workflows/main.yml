@@ -26,7 +26,7 @@ jobs:
    runs-on: ubuntu-latest
    environment:
     name: Homologacao
-    url: 'felipeftt1.com'
+    # url: 'felipeftt1.com'
    needs: deploy-dev
    steps:
       - name: Run a one-line script
@@ -36,7 +36,7 @@ jobs:
    runs-on: ubuntu-latest
    environment:
     name: Prod
-    url: 'felipeftt2.com'
+    # url: 'felipeftt2.com'
    needs: deploy-hmg
    steps:
       - name: Run a one-line script
