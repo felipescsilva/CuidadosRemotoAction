@@ -1,0 +1,46 @@
+<div class="main-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>Cadastrar</mat-card-title>
+      </mat-card-header>
+  
+      <form class="example-form">
+  
+        <mat-card-content>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Nome">
+          </mat-form-field>
+  
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Email">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Telefone">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Data de Nascimento">
+          </mat-form-field>
+  
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Senha">
+          </mat-form-field>
+  
+          <mat-form-field class="example-full-width">
+            <mat-label>Perfil do usuário</mat-label>
+            <mat-select>
+              <mat-option [value]="role.value" *ngFor="let role of UserRole">
+                {{role.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+        </mat-card-content>
+  
+        <button mat-stroked-button class="btn-block">Registrar</button>
+  
+      </form>
+    </mat-card>
+  </div>
+
